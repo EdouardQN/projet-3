@@ -1,0 +1,149 @@
+@import 'abstracts/mixins';
+@import 'abstracts/variables';
+
+@import 'base/reset';
+
+@import 'components/card';
+@import 'components/buttons';
+@import 'components/loading-spinner';
+
+@import 'layouts/header';
+@import 'layouts/body';
+@import 'layouts/footer';
+
+.lieux{
+    @include flexBox(row, center, center);
+    gap: 8px;
+    background-color:  lighten($clr-gris, 40%);
+    font-weight: 600;
+
+    &__icone{
+        position: absolute;
+        left: 30%;
+    }
+    
+    input{
+        position: absolute;
+        left: 40%;
+        border: none;
+        outline: none;
+        background: none;
+
+        &::placeholder{
+            color: $clr-noir;
+            font-weight: 900;
+        }
+    }
+
+}
+
+@media screen and (min-width:499px) {
+    .lieux{
+        input{
+            left: 35%;
+        }
+        
+    }
+    
+}
+
+@media screen and (min-width:530px){
+    .lieux{
+        @include flexBox(row, center, center);
+        &__icone{
+            position: relative;
+            left: 0;
+        }
+
+        input{
+            position: relative;
+            left: 0;
+        }
+    }
+}
+
+
+.exploration{
+    @include flexBox(column, flex-start, center);
+    text-align: center;
+    gap: 0.5em;
+    background-color: $clr-blanc-247;
+
+    &__titre{
+        font-size: $ft-txt-2;
+    }
+
+    &__texte{
+        color: $clr-gris;
+    }
+
+    &__btn{
+        margin: 16px 0;
+    }
+}
+
+.fonctionnement{
+    @include flexBox(column, center, center);
+    gap: 24px;
+
+    &__titre{
+        align-self: flex-start;
+    }
+
+    &__cercle{
+        @include flexBox(row, center, center);
+        color: $clr-blanc;
+        font-size: $ft-sz-txt;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        left: -10px;
+        background: $clr-primaire;
+        border-radius: 50%;
+    }
+}
+
+.menu{
+    position: relative;
+    background-color: $clr-blanc-247;
+
+    .image{
+        width: 100%;
+
+        img{
+            width: 100%;
+            object-fit: cover;
+            height: 270px;
+        }
+ 
+    }
+
+    .contenu{
+        position: relative;
+        bottom: 55px;
+        width: 100%;
+        border-radius: 40px 40px 0 0;
+        background-color: $clr-blanc-247;
+
+    }
+
+    &__titre{
+        color: lighten($clr-noir, 40%);
+        position: relative;
+
+        &::after{
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            height: 3px;
+            width: 60%;
+            background: $clr-tertiaire;
+        }
+    }
+
+    &__nav{
+        @include flexBox(column, space-around);
+        gap: 16px;
+    }
+}

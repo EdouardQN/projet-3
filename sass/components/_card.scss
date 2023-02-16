@@ -1,0 +1,222 @@
+// Cartes Étapes
+
+.fonctionnement__carte{
+    cursor: pointer;
+    position: relative;
+    @include flexBox(row, flex-start, center);
+    gap: 32px;
+    background-color: $clr-blanc-247;
+    width: 320px;
+    font-size: $ft-txt-1;
+    border-radius: 20px;
+    box-shadow: $box-shadow;
+
+    ion-icon{
+        font-size: $ft-txt-2;
+        color: $clr-gris;
+    }
+
+    &:is(:hover, :focus){
+        background: lighten($clr-primaire,35%);
+
+        ion-icon{
+            color: $clr-primaire;
+        }
+    }
+
+}
+
+@media screen and (min-width:689px) {
+    .fonctionnement__carte{ 
+        width: 80%;
+            
+
+    }
+    
+}
+
+// Cartes Restaurants
+
+.restaurant{
+    &__nav{
+        @include flexBox(column, space-around, center, nowrap);
+        background-color: $clr-blanc-247;       
+        gap: 32px;
+    }
+
+    &__titre{
+        align-self: flex-start;
+    }
+
+    &__carte{
+        position: relative;
+        display: grid;
+        // grid-template-areas: 'img',
+        // 'div ion-icon';
+        width: 330px;
+        border-radius: 15px;
+        text-decoration: none;
+        color: $clr-noir;
+        background: $clr-blanc;
+        box-shadow: $box-shadow;
+
+        img{
+            width: 100%;
+            height: 170px;
+            object-fit: cover;
+            border-radius: 15px 15px 0 0;
+        }
+    }
+
+    &__descriptif{
+        @include flexBox(column, center);
+        gap: 8px;
+
+        span{
+            color: $clr-gris;
+        }
+    }
+
+    &__favoris{
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        width: 35px;
+        height: 35px;
+        transform: translate(-50%, -50%);
+        color: $clr-gris;
+
+    }
+
+    &__remplis{
+        opacity: 0;
+        color: $clr-primaire;
+        transition: all 0.4s linear 0s;
+
+        &:hover{
+            opacity: 1;
+        }
+    }
+
+    &__nouveau{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        border-radius: 2px;
+        color: darken($clr-tertiaire, 50%);
+        background-color: $clr-tertiaire;
+    }
+}
+
+@media screen and (min-width:789px) {
+    .restaurant{
+        &__nav{
+            @include flexBox(row, space-around, flex-start, wrap);
+        }
+        &__titre{
+            width: 100%;
+        }
+    }
+    
+}
+
+// Carte Menu
+
+.menu--carte{
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    line-height:24px;
+    box-shadow:  $box-shadow;
+    width: 100%;
+    background: $clr-blanc;
+    font-size: $ft-sz-txt;
+
+
+
+
+
+    @keyframes apparition {
+        0% {
+            transform: translateY(10px);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    &__1{
+         animation: apparition 0.8s ease-in;
+    }
+    &__2{
+        animation: apparition 0.8s ease-in 0.8s;
+    }
+    &__3{
+        animation: apparition 0.8s ease-in 1.6s;
+    }
+
+
+    &__descriptif{
+        @include flexBox(row, space-between);
+
+        :nth-child(1){
+            color: $clr-gris;
+            max-width: 85%;
+            white-space: nowrap;            
+            overflow: hidden;
+            text-overflow: ellipsis;
+            transition: all 0.4s ease-in-out;
+            
+        }
+
+        :nth-child(2){
+            transition: all 0.4s ease-in-out;
+        }
+    }
+
+    &:is(:hover, :focus){
+        .menu--carte{
+            &__descriptif :nth-child(1){
+                max-width: 60%;
+            }
+
+            &__descriptif :nth-child(2){
+                transform: translateX(-50px);
+            }
+
+             &__selection{
+                 transform: translateX(0%);
+                 ion-icon{
+                    transform: rotate(360deg);
+                 }
+             }
+        }
+    }
+
+    &__selection{
+        position: absolute;
+        top: 0;
+        transform: translate(100%, 0);
+        right: 0;
+        background: $clr-tertiaire;
+        width: 15%;
+        height: 100%;
+        transition: all 0.4s ease-in-out;
+
+        ion-icon{
+            position: absolute;
+            transition: all 0.4s ease-in-out 0.2s;
+            background-color: $clr-blanc;
+            border-radius: 50%;
+            color: $clr-tertiaire;
+            width: 20px;
+            height: 20px;
+            top: 40%;
+            left: 30%;
+        }
+    }
+}
+

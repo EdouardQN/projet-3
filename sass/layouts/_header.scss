@@ -1,0 +1,38 @@
+.header--main{
+    position: relative;
+    @include flexBox(row, center, center);
+    box-shadow: 1px 2px 5px 0px rgba(145,141,141,0.75);
+
+    a{
+        text-decoration: none;
+        color: $clr-noir;
+        position: absolute;
+        left: 10px;
+        top: 40%;
+    }
+}
+
+
+// Header Menu
+
+.header--menu{
+    @include flexBox(row, flex-start, center);
+    gap: 48px;
+    font-family: $ft-titre;
+    font-size: $ft-sz-txt;
+
+    &__favoris{
+        position: absolute;
+        right: 20px;
+
+        cursor: pointer;
+        font-size: $ft-txt-2;
+    }
+
+    &__favoris--remplis{
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        right: 20px;
+    }
+}

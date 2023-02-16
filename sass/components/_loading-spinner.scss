@@ -1,0 +1,34 @@
+.loading--spinner{
+    display: inline-block;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+
+    
+  }
+  .loading--spinner:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid $clr-primaire;
+    border-color: $clr-primaire transparent $clr-secondaire transparent;
+    animation: spin 2s linear 3;
+  }
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+ 
+
+  

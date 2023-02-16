@@ -1,0 +1,12 @@
+footer{
+    @include flexBox(column);
+    gap: 8px;
+    background: lighten($clr-noir, 22%);
+    
+    a{
+        font-size: $ft-txt;
+        text-decoration: none;
+        color: $clr-blanc;
+    }
+
+}
