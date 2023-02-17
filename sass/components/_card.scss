@@ -245,6 +245,30 @@
         }
         
     }
+    @media screen and (min-width:1369px) {
+        &:is(:hover, :focus){
+            .menu--carte{
+      
+                &__descriptif :nth-child(2){
+                    transform: translateX(-210px);
+                }
+
+            }
+        }
+        
+    }
+    @media screen and (min-width:1519px) {
+        &:is(:hover, :focus){
+            .menu--carte{
+      
+                &__descriptif :nth-child(2){
+                    transform: translateX(-230px);
+                }
+
+            }
+        }
+        
+    }
 
     &__selection{
         position: absolute;

@@ -413,6 +413,16 @@
     transform: translateX(-190px);
   }
 }
+@media screen and (min-width: 1369px) {
+  .menu--carte:is(:hover, :focus) .menu--carte__descriptif :nth-child(2) {
+    transform: translateX(-210px);
+  }
+}
+@media screen and (min-width: 1519px) {
+  .menu--carte:is(:hover, :focus) .menu--carte__descriptif :nth-child(2) {
+    transform: translateX(-230px);
+  }
+}
 .menu--carte__selection {
   position: absolute;
   top: 0;
