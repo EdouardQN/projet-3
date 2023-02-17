@@ -150,7 +150,7 @@
             &:nth-child(#{$i}) {
             
                 // Delay the animation. Delay increases as items loop.
-                animation-delay: $i * (1s / 16);
+                animation-delay: $i * (1s / 4);
             }
 
         }
@@ -206,6 +206,44 @@
                  }
              }
         }
+    }
+
+    @media screen and (min-width:479px) {
+        &:is(:hover, :focus){
+            .menu--carte{
+      
+                &__descriptif :nth-child(2){
+                    transform: translateX(-80px);
+                }
+
+            }
+        }
+        
+    }
+
+    @media screen and (min-width:692px) {
+        &:is(:hover, :focus){
+            .menu--carte{
+      
+                &__descriptif :nth-child(2){
+                    transform: translateX(-120px);
+                }
+
+            }
+        }
+        
+    }
+    @media screen and (min-width:839px) {
+        &:is(:hover, :focus){
+            .menu--carte{
+      
+                &__descriptif :nth-child(2){
+                    transform: translateX(-190px);
+                }
+
+            }
+        }
+        
     }
 
     &__selection{
