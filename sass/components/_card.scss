@@ -46,6 +46,7 @@
 
     &__titre{
         align-self: flex-start;
+        margin: 0 3%;
     }
 
     &__carte{
@@ -108,6 +109,81 @@
     }
 }
 
+
+@media screen and (min-width:429px){
+
+    .restaurant{
+        &__titre{
+            margin: 0 7%;
+        }
+    }
+}
+
+@media screen and (min-width:469px){
+
+    .restaurant{
+        &__titre{
+            margin: 0 10%;
+        }
+    }
+}
+
+@media screen and (min-width:499px){
+
+    .restaurant{
+        &__titre{
+            margin: 0 14%;
+        }
+    }
+}
+
+
+@media screen and (min-width:539px){
+
+    .restaurant{
+        &__titre{
+            margin: 0 16%;
+        }
+    }
+}
+
+@media screen and (min-width:579px){
+
+    .restaurant{
+        &__titre{
+            margin: 0 18%;
+        }
+    }
+}
+
+@media screen and (min-width:629px){
+
+    .restaurant{
+        &__titre{
+            margin: 0 21%;
+        }
+    }
+}
+
+@media screen and (min-width:679px){
+
+    .restaurant{
+        &__titre{
+            margin: 0 23%;
+        }
+    }
+}
+
+@media screen and (min-width:739px){
+
+    .restaurant{
+        &__titre{
+            margin: 0 25%;
+        }
+    }
+}
+
+
 @media screen and (min-width:789px) {
     .restaurant{
         &__nav{
@@ -115,10 +191,12 @@
         }
         &__titre{
             width: 100%;
+            margin: 0 auto;
         }
     }
     
 }
+
 
 // Carte Menu
 
@@ -132,6 +210,7 @@
     width: 100%;
     background: $clr-blanc;
     font-size: $ft-sz-txt;
+    font-family: $ft-txt;
 
     animation:  apparition 1.5s ease-in;
 
